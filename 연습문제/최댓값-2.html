@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열로 최댓값 함수 만들기-매개변수활용
+        (배열로 받는 최댓값 함수)
+    </title>
+</head>
+<body>
+    <script>
+
+        
+        //let arr=[]
+        const max = function(arr){
+            
+             Arr=[]
+            let temp
+
+            for(let i=0;i<arr.length-1;i++){
+                for(let j=i+1;j<arr.length;j++){
+                    if(arr[i]>arr[j]){
+                        temp=arr[i]
+                        arr[i]=arr[j]
+                        arr[j]=temp
+                    }
+                }
+            }
+           
+           return arr[arr.length-1]
+            
+        }
+        let list=[1,10,90,6]
+        console.log(max(list))
+
+        
+    </script>
+</body>
+</html>

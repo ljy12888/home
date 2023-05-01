@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>버튼으로 1씩 증가/감소</title>
+</head>
+<body>
+    <div>0</div>
+    <button onclick="a1()">+</button>
+    <button onclick="a2()">-</button>
+    
+
+
+    <script>
+        let sum=0
+        function a1(){
+            sum+=1
+         let list=''
+        list += `<div>${sum}</div>`
+        list += `<button onclick="a1()">+</button>`
+        list += `<button onclick="a2()">-</button>`
+
+        document.close()
+        document.write(list)
+    }
+    function a2(){
+            sum-=1
+         let list=''
+        list += `<div>${sum}</div>`
+        list += `<button onclick="a1()">+</button>`
+        list += `<button onclick="a2()">-</button>`
+
+        document.close()
+        document.write(list)
+    }
+    </script>
+</body>
+</html>

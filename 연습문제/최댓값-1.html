@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열로 최대값 함수 만들기-일반적인방법</title>
+</head>
+<body>
+    <script>
+
+        let arr=[8,200,600,4]
+
+        const max = function(){
+            //let arr=[8,200,500,4]
+            //let output
+            let temp
+
+            for(let i=0;i<arr.length-1;i++){
+                for(let j=i+1;j<arr.length;j++){
+                    if(arr[i]>arr[j]){
+                        temp=arr[i]
+                        arr[i]=arr[j]
+                        arr[j]=temp
+                    }
+                }
+            }
+           return arr[arr.length-1]
+           //return output
+            
+        }
+        
+        console.log(max())
+
+        
+    </script>
+</body>
+</html>

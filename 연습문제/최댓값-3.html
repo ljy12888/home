@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>숫자로 받는 최댓값 함수만들기-arr을 밖으로 빼야하는 이유</title>
+</head>
+<body>
+    <script>
+        let arr=[]
+        function max(a,b,c){
+            /*let num1=a
+            let num2=b
+            let num3=c*/
+            arr=[a,b,c]
+            /*arr[0]=a
+            arr[1]=b
+            arr[2]=c*/
+           
+           
+
+           /* if(Array.isArray(input)){
+                arr=input
+            }*/
+            //else{arr=[input]}
+           
+            console.log(arr)
+           
+
+            let temp
+
+            for(let i=0;i<arr.length-1;i++){
+                for(let j=i+1;j<arr.length;j++){
+                    if(arr[i]>arr[j]){
+                        temp=arr[i]
+                        arr[i]=arr[j]
+                        arr[j]=temp
+                    }
+                }
+            }
+           
+           return arr[arr.length-1]
+            
+        }
+        //let list=[1,2,3,4]
+        //let list2=1,2,3,4    
+        console.log(max(40,2,3))
+    </script>
+</body>
+</html>

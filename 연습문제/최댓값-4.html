@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>숫자,배열로 받는 최댓값 함수</title>
+</head>
+<body>
+    <script>
+        let arr=[]
+        function max(...input){
+            let input2=[]
+           if(Array.isArray(input)){
+                arr=input
+            }
+            else{
+                input2=[...[input]]
+                arr=input2
+            }
+           console.log(input2)
+            console.log(arr)
+           
+
+            let temp
+
+            for(let i=0;i<arr.length-1;i++){
+                for(let j=i+1;j<arr.length;j++){
+                    if(arr[i]>arr[j]){
+                        temp=arr[i]
+                        arr[i]=arr[j]
+                        arr[j]=temp
+                    }
+                }
+            }
+           
+           return arr[arr.length-1]
+            
+        }
+        //let list=[1,2,3,4]
+        //let list2=1,2,3,4    
+        //console.log(max(7,2,30))
+        console.log(max([8,20,3,4]))
+    </script>
+</body>
+</html>

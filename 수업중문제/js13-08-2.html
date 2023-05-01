@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a=['apple','pear','watermelon','melon','peach','strawberry',
+        'mango','banana','kiwi','grape','orange','mandrin']
+        
+        //let temp2=[]    //오름차순배열
+    function fruts(){
+        let temp=[]
+        for(let i=0;i<a.length;i++){
+             
+            if(a[i].length>=5)temp.push(a[i])
+        }
+
+        //console.log(temp)
+        //console.log(temp[0][0])
+        //console.log(temp.length)
+
+        let temp3
+        for(let i=0;i<temp.length-1;i++){
+            for(let j=i+1;j<temp.length;j++){
+                if(temp[i][0]>temp[j][0]){
+                    temp3=temp[i]
+                    temp[i]=temp[j]
+                    temp[j]=temp3
+            }
+          }   
+        
+        }
+        return temp
+    }
+        console.log(fruts())
+       
+    </script>
+</body>
+</html>
