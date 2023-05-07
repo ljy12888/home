@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #prod-pic,#desc{
+            float: left;
+        }
+        #small-pic{
+            float: left;
+        }
+        .small{
+            width: 60px;
+            height: 60px;
+        }
+    </style>
+</head>
+<body>
+    <div id="prod-pic">
+        <img src="/images/coffee-pink.jpg" alt="에디오피아 게뎁" id="cup" width="200" height="200">
+        <div id="small-pic">
+            <img src="/images/coffee-pink.jpg" class="small">
+            <img src="/images/coffee-gray.jpg" class="small">
+            <img src="/images/coffee-blue.jpg" class="small">
+        </div>
+    </div>	
+
+    <script>
+        let bigpic=document.querySelector("#cup")
+        let smallPics=document.querySelectorAll(".small")
+        
+        for(let i=0;i<smallPics.length;i++){
+            smallPics[i].onclick=showBig
+        }
+
+        function showBig(){
+            let newPic=this.src
+            bigpic.setAttribute("src",newPic)
+        }
+    </script>
+</body>
+</html>

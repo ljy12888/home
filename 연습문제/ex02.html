@@ -4,16 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>매개변수</title>
+    <title>Document</title>
 </head>
-<body>
-    <script>
-      function num(...rests2){
-        let rests1=[rests2[0],rests2[1],rests2[2]]
-        console.log(rests1)
-      }
+<body onload="init()">
+    <canvas id="canvas" width="400" height="300">
 
-      num(1,2,3)
+    </canvas>
+
+    <script>
+        var cwidth=400
+        var cheight=300
+        var dicex=50
+        var dicey=50
+        var dicewidth=100
+        var diceheight=100
+        var ctx
+        function init(){
+            var ch=1+Math.floor(Math.random()*6)
+            drawface(ch)
+        }
+
+        function drawface(n){
+            ctx=document.getElementById('cavas').getContext('2d')
+            ctx.lineWidth=5
+            ctx.clearRect(dicex,dicey,dicewidth,diceheight)
+            ctx.strokeRect(dicex,dicey,dicewidth,diceheight)
+            ctx.fillStyle="#009966"
+        }
     </script>
 </body>
 </html>

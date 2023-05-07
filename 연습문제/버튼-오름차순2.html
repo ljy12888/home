@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>버튼-입력과 동시에 오름차순배열</title>
+</head>
+<body>
+    
+    <button onclick="lineUp()">입력&오름차순정리</button>
+    <div id="result">(입력값표시하기)</div>
+
+    <script>
+        arr=[]
+  
+    function lineUp(){
+        let n=prompt('숫자를 입력하세요')*1
+        arr.push(n)
+        let temp
+       
+
+        for(let i=0;i<arr.length-1;i++){
+            for(let j=i+1;j<arr.length;j++){
+                if(arr[i]>arr[j]){
+                    temp=arr[i]
+                    arr[i]=arr[j]
+                    arr[j]=temp
+                }
+            }
+        }
+        return document.querySelector("#result").innerHTML=`오름차순정리:${arr}`
+    }
+
+   
+    </script>
+</body>
+</html>

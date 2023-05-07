@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="input"><button onclick="arrPush()">추가</button>
+    <div id="list"></div>
+
+    <script>
+        let arr=[]
+        
+        function arrPush(){
+            let val=document.querySelector("#input").value
+           arr.push(val)
+           document.querySelector("#input").value=""
+           document.querySelector("#input").focus()
+            addList()
+        }
+
+        function addList(){
+             let list="<ul>"
+            for(let i=0;i<arr.length;i++){
+                list += arr[i]+"<br>"
+            }
+            list+="<ul>"
+            document.querySelector("#list").innerHTML=list
+        }
+
+    </script>
+</body>
+</html>
