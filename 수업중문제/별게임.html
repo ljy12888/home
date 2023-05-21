@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .clicked {
+        display: none;
+      }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const star = document.querySelector("h1");
+        const o = document.querySelector("#o");
+        let random_x = Math.floor(Math.random() * 10) * 100;
+        let random_y = Math.floor(Math.random() * 10) * 100;
+        star.style.position = "absolute";
+        o.style.position = "absolute";
+
+        console.log(random_x);
+        console.log(random_y);
+        //let [x, y] = [0, 0];
+        let x = 0;
+        let y = 0;
+        let dx = random_x - x;
+        let dy = random_y - y;
+
+        const block = 10;
+        const print = () => {
+          star.style.left = `${x * block}px`;
+          star.style.top = `${y * block}px`;
+
+          o.style.left = `${random_x}px`;
+          o.style.top = `${random_y}px`;
+        };
+        print();
+
+        document.body.addEventListener("keydown", (e) => {
+          switch (e.key) {
+            case "ArrowLeft":
+              x -= 1;
+              break;
+            case "ArrowUp":
+              y -= 1;
+              break;
+            case "ArrowRight":
+              x += 1;
+              break;
+            case "ArrowDown":
+              y += 1;
+              break;
+          }
+          print();
+        });
+        if (dx <= 50 && dy <= 50) {
+          o.style.color = blue;
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <h1>★</h1>
+    <h1 id="o">●</h1>
+  </body>
+</html>

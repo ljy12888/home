@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        font-size: 30px;
+      }
+      #h1 {
+        _display: none;
+        _color: blue;
+      }
+
+      .clicked {
+        display: none;
+      }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const star = document.querySelector("#h1");
+        const o = document.querySelector("#o");
+        let random_x = Math.floor(Math.random() * 10) * 100;
+        let random_y = Math.floor(Math.random() * 10) * 100;
+        star.style.position = "absolute";
+        o.style.position = "absolute";
+
+        console.log(random_x);
+        console.log(random_y);
+        let [x, y] = [0, 0];
+        //let x = 0;
+        //let y = 0;
+
+        const block = 10;
+        const print = () => {
+          star.style.left = `${x * block}px`;
+          star.style.top = `${y * block}px`;
+
+          o.style.left = `${random_x}px`;
+          o.style.top = `${random_y}px`;
+
+          //var x = getOffset(document.getElementById("div")).left;
+          //var y = getOffset(document.getElementById("div")).top;
+        };
+        print();
+
+        let dx = star.style.left - o.style.left;
+        let dy = star.style.top - o.style.top;
+
+        document.body.addEventListener("keydown", (e) => {
+          switch (e.key) {
+            case "ArrowLeft":
+              x -= 1;
+              break;
+            case "ArrowUp":
+              y -= 1;
+              break;
+            case "ArrowRight":
+              x += 1;
+              break;
+            case "ArrowDown":
+              y += 1;
+              break;
+          }
+
+          star.style.color = "red";
+          //o.style.display = "none";
+          if (dx == 0 && dy == 0) {
+            star.style.color = "blue";
+          }
+
+          print();
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <button id="btn">열기/감추기</button>
+
+    <div id="h1">★</div>
+    <div id="o">☆</div>
+  </body>
+  <script>
+    const btn = document.querySelector("#btn");
+
+    btn.addEventListener("click", () => {
+      o.classList.toggle("clicked");
+      star.style.color = "red";
+    });
+
+    /*star.addEventListener("keydown", () => {
+      if (dx == 0 && dy == 0) {
+        star.style.color = "blue";
+      }
+    });*/
+  </script>
+</html>

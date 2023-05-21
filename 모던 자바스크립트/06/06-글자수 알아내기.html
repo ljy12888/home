@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const button = document.querySelector("#btn");
+        const h1 = document.querySelector("#result");
+        //const input=document.querySelector('#input')
+
+        button.addEventListener("click", () => {
+          const word = document.querySelector("#input").value;
+          const length = word.length;
+          h1.innerText = `글자수 : ${length}`;
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <input id="input" /><button id="btn">글자수 확인</button>
+    <h1 id="result"></h1>
+  </body>
+</html>
