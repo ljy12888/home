@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const btn = document.querySelector("#btn");
+        const div = document.querySelector("div");
+
+        btn.onclick = () => {
+          const input = document.querySelector("#input").value;
+          const list1 = document.createElement("input");
+          const list2 = document.createElement("p");
+          const del_btn = document.createElement("button");
+
+          list1.setAttribute("type", "checkbox");
+
+          //div.appendChild(list1);
+          //div.appendChild(list2);
+          //div.appendChild(del_btn);
+          div.append(list1, list2, del_btn);
+          list2.style.display = "inline";
+
+          list2.innerText = `${input}`;
+          del_btn.innerText = "삭제" + "<br>";
+        };
+      });
+    </script>
+  </head>
+  <body>
+    <input type="text" id="input" /><button id="btn">추가</button>
+    <div id="field"></div>
+    <!-- <input type="checkbox" />text -->
+  </body>
+</html>
